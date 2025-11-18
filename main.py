@@ -10,7 +10,7 @@ from tensorflow.keras import layers, models
 csv_path = "data/esoc_name_file.csv"        # your metadata file
 img_dir = "data/insects"         # folder with species subfolders (ScientificName style)
 IMG_SIZE = (224, 224)
-BATCH_SIZE = 32
+BATCH_SIZE = 64
 EPOCHS = 10
 TARGET_LEVEL = "order"           # <-- choose: "Order", "Family", "Genus", "Species"
 
@@ -203,7 +203,6 @@ history = model.fit(
     validation_data=val_ds,
     epochs=EPOCHS
 )
-
 # ----------------------
 # 8. Save model + classes
 # ----------------------
